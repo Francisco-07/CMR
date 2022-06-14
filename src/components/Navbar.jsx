@@ -43,8 +43,8 @@ const Navbar = () => {
           )}
         </Hamburger>
         <Menu isOpen={isOpen}>
+          <a href='#eventos'>EVENTOS</a>
           <a href='#musica'>MUSICA</a>
-          <a href='/eventos'>EVENTOS</a>
           <a href='#contacto'>CONTACTO</a>
         </Menu>
       </Container>

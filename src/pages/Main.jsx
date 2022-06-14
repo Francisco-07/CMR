@@ -6,7 +6,7 @@ import { data } from '../data'
 import Contacto from '../components/Contacto'
 import Redes from '../components/Redes'
 import styled, { keyframes } from 'styled-components'
-import Profiles from '../components/Profiles'
+import Slider from '../components/Slider'
 
 function Main() {
   return (
@@ -21,8 +21,8 @@ function Main() {
           img={info.img}
         />
       ))}
-      <Profiles />
-      <Title title='CONTACTO' id='contacto' />
+      <Slider />
+      <Title title='CONTACTO' />
       <Redes />
       <Contacto />
     </Fade>

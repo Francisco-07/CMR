@@ -4,7 +4,7 @@ import styled from 'styled-components'
 function Contacto() {
   return (
     <>
-      <Container>
+      <Container id='contacto'>
         <Text>NEWSLETTER</Text>
         <Form>
           <Email placeholder='EMAIL' />

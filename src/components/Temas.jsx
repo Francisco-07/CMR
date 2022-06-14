@@ -40,6 +40,7 @@ const Container = styled.div`
   transform: ${({ inView }) =>
     inView ? 'translate(0px, 0px);' : 'translate(0px, 80px);'};
   transition: all 1.2s;
+  height: 170px;
   @media ${device.tablet} {
     height: 170px;
   }
@@ -47,13 +48,14 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
+
   width: 90%;
 `
 const ImgContainer = styled.div`
   display: none;
   @media ${device.tablet} {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 50%;
     margin-left: 2rem;
@@ -73,8 +75,11 @@ const InfoContainer = styled.div`
     width: 60%;
   }
 `
-const Info = styled.div``
+const Info = styled.div`
+  flex: 2;
+`
 const Icons = styled.div`
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;

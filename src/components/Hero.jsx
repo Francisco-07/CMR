@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer'
 const Hero = () => {
   const [ref, inView] = useInView({ triggerOnce: true })
   return (
-    <Container ref={ref}>
+    <Container ref={ref} id='eventos'>
       <Title inView={inView} delay={0.2}>
         PROXIMO EVENTO
       </Title>

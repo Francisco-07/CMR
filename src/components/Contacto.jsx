@@ -1,10 +1,12 @@
 import { colors } from '../utils'
 import styled from 'styled-components'
+import { useInView } from 'react-intersection-observer'
 
 function Contacto() {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0 })
   return (
     <>
-      <Container id='contacto'>
+      <Container id='contacto' ref={ref} inView={inView}>
         <Text>NEWSLETTER</Text>
         <Form>
           <Email placeholder='EMAIL' />
@@ -23,6 +25,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  transition: all 1s;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
 `
 
 const Text = styled.h3`

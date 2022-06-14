@@ -1,10 +1,8 @@
 import Navbar from '../components/Navbar'
 import Temas from '../components/Temas'
 import Hero from '../components/Hero'
-import Title from '../components/Title'
 import { data } from '../data'
-import Contacto from '../components/Contacto'
-import Redes from '../components/Redes'
+import Footer from '../components/Footer'
 import styled, { keyframes } from 'styled-components'
 import Slider from '../components/Slider'
 
@@ -22,9 +20,8 @@ function Main() {
         />
       ))}
       <Slider />
-      <Title title='CONTACTO' />
-      <Redes />
-      <Contacto />
+
+      <Footer />
     </Fade>
   )
 }

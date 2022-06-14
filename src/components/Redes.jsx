@@ -1,26 +1,22 @@
 // librerias
 import styled from 'styled-components'
 import { colors } from '../utils'
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaYoutubeSquare,
-} from 'react-icons/fa'
+import { SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si'
 
 function Redes() {
   return (
     <>
       <Container>
         <RedesList>
-          <li>
-            <FaFacebookSquare />
-          </li>
-          <li>
-            <FaInstagramSquare />
-          </li>
-          <li>
-            <FaYoutubeSquare />
-          </li>
+          <Li col={'#4267B2'}>
+            <SiFacebook />
+          </Li>
+          <Li col={'#FF0000'}>
+            <SiYoutube />
+          </Li>
+          <Li col={'#E1306C'}>
+            <SiInstagram />
+          </Li>
         </RedesList>
       </Container>
     </>
@@ -32,6 +28,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 2.2rem;
+
   &::after {
     content: '';
     display: block;
@@ -51,14 +48,14 @@ const RedesList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+`
+const Li = styled.li`
+  margin-bottom: 25px;
 
-  li {
-    margin-bottom: 25px;
-  }
-  & svg {
+  svg {
     font-size: 2rem;
     &:hover {
-      color: blue;
+      color: ${(props) => props.col};
     }
   }
 `

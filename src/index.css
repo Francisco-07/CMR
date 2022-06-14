@@ -42,18 +42,3 @@ textarea:focus,
 input:focus {
   color: white;
 }
-
-.carousel {
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 900px;
-}
-
-.carousel-inner {
-  white-space: nowrap;
-}
-
-.carousel-item {
-  display: inline-block;
-  width: 100%;
-}

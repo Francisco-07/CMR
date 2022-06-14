@@ -1,6 +1,62 @@
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { useState } from 'react'
 import styled from 'styled-components'
+import { useInView } from 'react-intersection-observer'
+// iconos
+
+import { BsSpotify } from 'react-icons/bs'
+import { SiInstagram } from 'react-icons/si'
+
+const Slider = () => {
+  const [slideIndex, setSlideIndex] = useState(0)
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0 })
+  const handleClick = (direction) => {
+    if (direction === 'left') {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+    }
+  }
+  const slides = [
+    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
+    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
+    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
+  ]
+
+  return (
+    <Container ref={ref} inView={inView}>
+      <Arrow direction='left' onClick={() => handleClick('left')}>
+        <AiOutlineArrowLeft />
+      </Arrow>
+      <Wrapper slideIndex={slideIndex}>
+        {slides.map((item, i) => (
+          <Slide key={i}>
+            <InfoContainer>
+              <div>
+                <Title>LUCHO</Title>
+                <Desc>MUSICO</Desc>
+                <Icons>
+                  <Icon col={'#E1306C'}>
+                    <SiInstagram />
+                  </Icon>
+                  <Icon col={'#1DB954'}>
+                    <BsSpotify />
+                  </Icon>
+                </Icons>
+              </div>
+            </InfoContainer>
+            <ImgContainer>
+              <Image src={item} />
+            </ImgContainer>
+          </Slide>
+        ))}
+      </Wrapper>
+      <Arrow direction='right' onClick={() => handleClick('right')}>
+        <AiOutlineArrowRight />
+      </Arrow>
+    </Container>
+  )
+}
 
 const Container = styled.div`
   width: 100%;
@@ -9,6 +65,8 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   margin-top: 2.2rem;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transition: all 1.3s;
 `
 
 const Arrow = styled.div`
@@ -28,6 +86,9 @@ const Arrow = styled.div`
   margin: auto;
   cursor: pointer;
   z-index: 2;
+  &:hover {
+    opacity: 1;
+  }
   svg {
     color: black;
   }
@@ -79,47 +140,18 @@ const Desc = styled.p`
   font-weight: 500;
   letter-spacing: 3px;
 `
-
-const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(0)
-  const handleClick = (direction) => {
-    if (direction === 'left') {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
-    } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+const Icons = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+`
+const Icon = styled.div`
+  svg {
+    font-size: 1.5rem;
+    &:hover {
+      color: ${(props) => props.col};
     }
   }
-  const slides = [
-    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
-    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
-    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
-  ]
-
-  return (
-    <Container>
-      <Arrow direction='left' onClick={() => handleClick('left')}>
-        <AiOutlineArrowLeft />
-      </Arrow>
-      <Wrapper slideIndex={slideIndex}>
-        {slides.map((item, i) => (
-          <Slide key={i}>
-            <InfoContainer>
-              <div>
-                <Title>LUCHO</Title>
-                <Desc>MUSICO</Desc>
-              </div>
-            </InfoContainer>
-            <ImgContainer>
-              <Image src={item} />
-            </ImgContainer>
-          </Slide>
-        ))}
-      </Wrapper>
-      <Arrow direction='right' onClick={() => handleClick('right')}>
-        <AiOutlineArrowRight />
-      </Arrow>
-    </Container>
-  )
-}
+`
 
 export default Slider

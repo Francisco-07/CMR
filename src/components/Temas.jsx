@@ -19,8 +19,12 @@ const Temas = (props) => {
             <p>{props.author}</p>
           </Info>
           <Icons>
-            <BsSpotify />
-            <SiYoutube />
+            <Icon col={'#1DB954'}>
+              <BsSpotify />
+            </Icon>
+            <Icon col={'#FF0000'}>
+              <SiYoutube />
+            </Icon>
           </Icons>
         </InfoContainer>
         <ImgContainer>
@@ -84,8 +88,13 @@ const Icons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+`
+const Icon = styled.div`
   svg {
     font-size: 2rem;
+    &:hover {
+      color: ${(props) => props.col};
+    }
   }
 `
 

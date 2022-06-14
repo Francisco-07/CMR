@@ -2,6 +2,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
+import { device } from '../utils'
 // iconos
 
 import { BsSpotify } from 'react-icons/bs'
@@ -117,8 +118,11 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 70%;
-  width: 70%;
+  width: 100%;
   object-fit: cover;
+  @media ${device.tablet} {
+    width: 70%;
+  }
 `
 
 const InfoContainer = styled.div`

@@ -12,9 +12,10 @@ const Container = styled.div`
 `
 
 const Arrow = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: #fff7f7;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  opacity: 0.4;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -26,7 +27,6 @@ const Arrow = styled.div`
   right: ${(props) => props.direction === 'right' && '10px'};
   margin: auto;
   cursor: pointer;
-  opacity: 0.5;
   z-index: 2;
   svg {
     color: black;
@@ -49,17 +49,20 @@ const Slide = styled.div`
 
 const ImgContainer = styled.div`
   height: 100%;
+  display: flex;
+  align-items: center;
   flex: 1;
 `
 
 const Image = styled.img`
-  height: 80%;
-  width: 80%;
+  height: 70%;
+  width: 70%;
   object-fit: cover;
 `
 
 const InfoContainer = styled.div`
   flex: 1;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,8 +104,10 @@ const Slider = () => {
         {slides.map((item, i) => (
           <Slide key={i}>
             <InfoContainer>
-              <Title>LUCHO</Title>
-              <Desc>MUSICO</Desc>
+              <div>
+                <Title>LUCHO</Title>
+                <Desc>MUSICO</Desc>
+              </div>
             </InfoContainer>
             <ImgContainer>
               <Image src={item} />

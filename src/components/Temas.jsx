@@ -83,7 +83,7 @@ const Icons = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.3rem;
+  gap: 1rem;
   svg {
     font-size: 2rem;
   }

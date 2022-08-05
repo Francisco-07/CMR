@@ -41,9 +41,15 @@ const Navbar = () => {
           )}
         </Hamburger>
         <Menu isOpen={isOpen}>
-          <a href='#eventos'>EVENTOS</a>
-          <a href='#musica'>MUSICA</a>
-          <a href='#contacto'>CONTACTO</a>
+          <a href='#eventos' onClick={() => setIsOpen(false)}>
+            EVENTOS
+          </a>
+          <a href='#musica' onClick={() => setIsOpen(false)}>
+            MUSICA
+          </a>
+          <a href='#contacto' onClick={() => setIsOpen(false)}>
+            CONTACTO
+          </a>
         </Menu>
       </Container>
     </>

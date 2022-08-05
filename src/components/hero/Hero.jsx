@@ -36,16 +36,7 @@ const Title = styled.h2`
   transform: ${({ inView }) =>
     inView ? 'translate(0px, 0px);' : 'translate(120px, 0);'};
   transition: all 0.5s;
+  transition-delay: ${(props) => props.delay}s;
+`
 
-  transition-delay: ${(props) => props.delay}s;
-`
-const Text = styled.h3`
-  font-size: 1.5rem;
-  margin: 0;
-  opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transform: ${({ inView }) =>
-    inView ? 'translate(0px, 0px);' : 'translate(120px, 0px);'};
-  transition: all 0.5s;
-  transition-delay: ${(props) => props.delay}s;
-`
 export default Hero

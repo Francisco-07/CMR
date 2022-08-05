@@ -6,10 +6,33 @@ import Slider from '../components/slider/Slider'
 import Eventos from '../components/eventos/Eventos'
 import Title from '../components/title/Title'
 import YoutubeEmbed from '../components/youtube/YoutubeEmbed'
-import { data, eventos } from '../data'
 import styled, { keyframes } from 'styled-components'
+import { getAllSongs, getAllArtistas, getAllEvents } from '../lib/api'
+import { useEffect, useState } from 'react'
 
 function Main() {
+  const [songs, setSongs] = useState([])
+  const [artistas, setArtistas] = useState([])
+  const [events, setEvents] = useState([])
+
+  useEffect(() => {
+    getAllSongs()
+      .then((data) => setSongs(data))
+      .catch(console.error)
+  }, [])
+
+  useEffect(() => {
+    getAllArtistas()
+      .then((data) => setArtistas(data))
+      .catch(console.error)
+  }, [])
+
+  useEffect(() => {
+    getAllEvents()
+      .then((data) => setEvents(data))
+      .catch(console.error)
+  }, [])
+  console.log(events)
   return (
     <Fade>
       <Navbar />
@@ -17,31 +40,30 @@ function Main() {
       <div id='musica'>
         <Title title='MUSICA' />
       </div>
-      {data.map((info) => (
+      {songs.map((info) => (
         <Temas
-          key={info.id}
+          key={info.slug}
           title={info.title}
           author={info.author}
-          img={info.img}
+          img={info.mainImage}
+          alt={info.slug}
         />
       ))}
       <div id='artistas'>
         <Title title='ARTISTAS' />
       </div>
-      <Slider />
+      <Slider artistas={artistas} />
       <div id='eventos'>
         <Title title='EVENTOS' />
       </div>
-      {eventos
-        .sort((a, b) => b.id - a.id)
-        .map((info) => (
-          <Eventos
-            key={info.id}
-            date={info.date}
-            name={info.name}
-            location={info.location}
-          />
-        ))}
+      {events.map((info) => (
+        <Eventos
+          key={info.id}
+          date={info.publishedAt}
+          name={info.title}
+          location={info.ciudad}
+        />
+      ))}
       <div id='video'>
         <Title title='VIDEOS' />
       </div>

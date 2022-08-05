@@ -6,21 +6,17 @@ import { device } from '../../utils'
 import { BsSpotify } from 'react-icons/bs'
 import { SiInstagram } from 'react-icons/si'
 
-const Slider = () => {
+const Slider = ({ artistas }) => {
   const [slideIndex, setSlideIndex] = useState(0)
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0 })
+
   const handleClick = (direction) => {
     if (direction === 'left') {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : artistas.length - 1)
     } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+      setSlideIndex(slideIndex < artistas.length - 1 ? slideIndex + 1 : 0)
     }
   }
-  const slides = [
-    'https://tn.com.ar/resizer/z4vSOIFyoqVJdouo5QO_lFNne_k=/767x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/QREUJ7GN7GLL2JJMK6BJYGME4E.jpg',
-    'https://tn.com.ar/resizer/z4vSOIFyoqVJdouo5QO_lFNne_k=/767x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/QREUJ7GN7GLL2JJMK6BJYGME4E.jpg',
-    'https://tn.com.ar/resizer/z4vSOIFyoqVJdouo5QO_lFNne_k=/767x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/QREUJ7GN7GLL2JJMK6BJYGME4E.jpg',
-  ]
 
   return (
     <Container ref={ref} inView={inView}>
@@ -28,12 +24,12 @@ const Slider = () => {
         <AiOutlineArrowLeft />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
-        {slides.map((item, i) => (
+        {artistas.map((item, i) => (
           <Slide key={i}>
             <InfoContainer>
               <div>
-                <Title>LUCHO</Title>
-                <Desc>MUSICO</Desc>
+                <Title>{item.name}</Title>
+                <Desc>{item.puesto}</Desc>
                 <Icons>
                   <Icon col={'#E1306C'}>
                     <SiInstagram />
@@ -45,7 +41,7 @@ const Slider = () => {
               </div>
             </InfoContainer>
             <ImgContainer>
-              <Image src={item} />
+              <Image src={item.mainImage} />
             </ImgContainer>
           </Slide>
         ))}
@@ -100,6 +96,7 @@ const Wrapper = styled.div`
   display: flex;
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
+  text-transform: uppercase;
 `
 
 const Slide = styled.div`
@@ -152,6 +149,7 @@ const Icons = styled.div`
 const Icon = styled.div`
   svg {
     font-size: 1.5rem;
+    cursor: pointer;
     &:hover {
       color: ${(props) => props.col};
     }

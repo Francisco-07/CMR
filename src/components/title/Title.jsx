@@ -22,6 +22,8 @@ const Text = styled.h2`
   font-size: 1.8rem;
   text-align: center;
   margin: 0;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transition: all 1s;
 
   &::before {
     content: '';

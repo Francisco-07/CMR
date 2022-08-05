@@ -1,6 +1,7 @@
 const colors = {
   white: '#fff',
   black: '#000',
+  green: '#80ac9a',
 }
 
 const size = {

@@ -24,7 +24,7 @@ const Temas = (props) => {
           </Icons>
         </InfoContainer>
         <ImgContainer>
-          <Img src={props.img} />
+          <Img src={props.img} alt={props.alt} />
         </ImgContainer>
       </Wrapper>
     </Container>
@@ -49,6 +49,7 @@ const Wrapper = styled.div`
   display: flex;
   border-bottom: 0.5px solid white;
   width: 90%;
+  text-transform: uppercase;
 `
 const ImgContainer = styled.div`
   display: none;

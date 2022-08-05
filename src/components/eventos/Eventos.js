@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { device } from '../../utils'
+import { device, colors } from '../../utils'
 
 const Eventos = (props) => {
   return (
@@ -28,8 +28,9 @@ const Wrapper = styled.div`
   display: flex;
   width: 90%;
   justify-content: space-between;
-  padding: 20px 0;
-  border-bottom: 0.5px solid white;
+  padding: 1.2rem 0;
+  border-bottom: 0.5px solid ${colors.white};
+  text-transform: uppercase;
 `
 
 const Date = styled.div`
@@ -44,18 +45,22 @@ const Evento = styled.div`
 const Info = styled.div`
   display: flex;
   width: 100%;
+
   @media ${device.tablet} {
     width: 60%;
   }
+  @media ${device.laptop} {
+    width: 40%;
+  }
 `
 const Button = styled.button`
-  background-color: #80ac9a;
-  color: white;
+  background-color: ${colors.green};
+  color: ${colors.white};
   border: none;
   font-weight: bold;
   &:hover {
-    color: black;
-    background-color: white;
+    color: ${colors.black};
+    background-color: ${colors.white};
   }
 `
 

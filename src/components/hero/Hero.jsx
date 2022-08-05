@@ -5,9 +5,7 @@ const Hero = () => {
   const [ref, inView] = useInView({ triggerOnce: true })
   return (
     <Container ref={ref}>
-      <Title inView={inView} delay={0.2}>
-        CMR
-      </Title>
+      <Title inView={inView}>CMR</Title>
     </Container>
   )
 }
@@ -33,8 +31,7 @@ const Title = styled.h2`
   margin: 0;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transform: scale(1.2);
-  transition: all 0.5s;
-  transition-delay: ${(props) => props.delay}s;
+  transition: all 1.5s;
 `
 
 export default Hero

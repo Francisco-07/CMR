@@ -4,16 +4,10 @@ import { useInView } from 'react-intersection-observer'
 const Hero = () => {
   const [ref, inView] = useInView({ triggerOnce: true })
   return (
-    <Container ref={ref} id='eventos'>
+    <Container ref={ref}>
       <Title inView={inView} delay={0.2}>
-        PROXIMO EVENTO
+        CMR
       </Title>
-      <Text inView={inView} delay={0.4}>
-        Marzo 23 LA PLATA
-      </Text>
-      <Text inView={inView} delay={0.6}>
-        Trappa Things
-      </Text>
     </Container>
   )
 }
@@ -34,7 +28,9 @@ const Container = styled.div`
   margin-bottom: 20px;
 `
 const Title = styled.h2`
-  font-size: 1.5rem;
+  font-size: 5.5rem;
+  border-bottom: 4px solid white;
+  border-top: 4px solid white;
   margin: 0;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transform: ${({ inView }) =>

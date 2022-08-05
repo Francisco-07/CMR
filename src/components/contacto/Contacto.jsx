@@ -1,4 +1,4 @@
-import { colors } from '../utils'
+import { colors } from '../../utils'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 

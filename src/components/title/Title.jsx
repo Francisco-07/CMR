@@ -1,14 +1,13 @@
-// libraries
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { colors } from '../utils'
+import { colors } from '../../utils'
 
 const Title = (props) => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0 })
   return (
     <Container>
       <Text ref={ref} inView={inView}>
-        <Span>CONTACTO</Span>
+        <Span>{props.title}</Span>
       </Text>
     </Container>
   )
@@ -16,6 +15,7 @@ const Title = (props) => {
 
 const Container = styled.div`
   overflow-x: hidden;
+  margin: 6rem 0;
 `
 const Text = styled.h2`
   position: relative;

@@ -1,6 +1,6 @@
-import Redes from './Redes'
-import Title from './Title'
-import Contacto from './Contacto'
+import Redes from '../redes/Redes'
+import Title from '../title/Title'
+import Contacto from '../contacto/Contacto'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 

@@ -2,9 +2,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { device } from '../utils'
-// iconos
-
+import { device } from '../../utils'
 import { BsSpotify } from 'react-icons/bs'
 import { SiInstagram } from 'react-icons/si'
 
@@ -19,9 +17,9 @@ const Slider = () => {
     }
   }
   const slides = [
-    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
-    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
-    'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/84428eae99c40b78a6d7dccd6805fc76~c5_720x720.jpeg?x-expires=1655373600&x-signature=LIPiH7PMVo%2FQw76%2BtxsI0VqAZJk%3D',
+    'https://tn.com.ar/resizer/z4vSOIFyoqVJdouo5QO_lFNne_k=/767x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/QREUJ7GN7GLL2JJMK6BJYGME4E.jpg',
+    'https://tn.com.ar/resizer/z4vSOIFyoqVJdouo5QO_lFNne_k=/767x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/QREUJ7GN7GLL2JJMK6BJYGME4E.jpg',
+    'https://tn.com.ar/resizer/z4vSOIFyoqVJdouo5QO_lFNne_k=/767x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/QREUJ7GN7GLL2JJMK6BJYGME4E.jpg',
   ]
 
   return (
@@ -87,11 +85,13 @@ const Arrow = styled.div`
   margin: auto;
   cursor: pointer;
   z-index: 2;
-  &:hover {
-    opacity: 1;
-  }
   svg {
     color: black;
+  }
+  @media ${device.tablet} {
+    &:hover {
+      opacity: 1;
+    }
   }
 `
 

@@ -1,16 +1,22 @@
-import Navbar from '../components/Navbar'
-import Temas from '../components/Temas'
-import Hero from '../components/Hero'
-import { data } from '../data'
-import Footer from '../components/Footer'
+import Navbar from '../components/navbar/Navbar'
+import Hero from '../components/hero/Hero'
+import Temas from '../components/temas/Temas'
+import Footer from '../components/footer/Footer'
+import Slider from '../components/slider/Slider'
+import Eventos from '../components/eventos/Eventos'
+import Title from '../components/title/Title'
+import YoutubeEmbed from '../components/youtube/YoutubeEmbed'
+import { data, eventos } from '../data'
 import styled, { keyframes } from 'styled-components'
-import Slider from '../components/Slider'
 
 function Main() {
   return (
     <Fade>
       <Navbar />
       <Hero />
+      <div id='musica'>
+        <Title title='MUSICA' />
+      </div>
       {data.map((info) => (
         <Temas
           key={info.id}
@@ -19,8 +25,25 @@ function Main() {
           img={info.img}
         />
       ))}
+      <div id='artistas'>
+        <Title title='ARTISTAS' />
+      </div>
       <Slider />
-
+      <div id='eventos'>
+        <Title title='EVENTOS' />
+      </div>
+      {eventos.map((info) => (
+        <Eventos
+          key={info.id}
+          date={info.date}
+          name={info.name}
+          location={info.location}
+        />
+      ))}
+      <div id='video'>
+        <Title title='VIDEOS' />
+      </div>
+      <YoutubeEmbed embedId='S1kf_XhrUos' />
       <Footer />
     </Fade>
   )

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { device, colors } from '../utils'
-
-// ICONOS
+import { device, colors } from '../../utils'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { ImCross } from 'react-icons/im'
 import { IconContext } from 'react-icons'
@@ -29,7 +27,7 @@ const Navbar = () => {
     <>
       <Container navbar={navbar}>
         <Logo>
-          <h1>CMR</h1>
+          <h1> </h1>
         </Logo>
         <Hamburger onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
@@ -70,7 +68,6 @@ const Logo = styled.div`
   z-index: 1999;
   padding-left: 1rem;
   & h1 {
-    border: 2px solid white;
     padding: 0 0.7rem;
     cursor: pointer;
   }

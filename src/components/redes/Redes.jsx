@@ -1,6 +1,5 @@
-// librerias
 import styled from 'styled-components'
-import { colors } from '../utils'
+import { colors } from '../../utils'
 import { SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si'
 
 function Redes() {

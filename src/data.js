@@ -61,4 +61,37 @@ const data = [
   },
 ]
 
-export { data }
+const eventos = [
+  {
+    id: 1,
+    date: '2021 SEP 21',
+    name: 'EVENT NAME',
+    location: 'BUENOS AIRES',
+  },
+  {
+    id: 2,
+    date: '2022 EN 5',
+    name: 'EVENT NAME',
+    location: 'BUENOS AIRES',
+  },
+  {
+    id: 3,
+    date: '2022 MAR 14',
+    name: 'EVENT NAME',
+    location: 'BUENOS AIRES',
+  },
+  {
+    id: 4,
+    date: '2022 JUL 7',
+    name: 'EVENT NAME',
+    location: 'BUENOS AIRES',
+  },
+  {
+    id: 5,
+    date: '2022 OCT 17',
+    name: 'EVENT NAME',
+    location: 'BUENOS AIRES',
+  },
+]
+
+export { data, eventos }

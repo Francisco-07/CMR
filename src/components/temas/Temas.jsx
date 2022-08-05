@@ -1,17 +1,13 @@
 import { useInView } from 'react-intersection-observer'
 import styled from 'styled-components'
-import { device } from '../utils'
-
-// iconos
+import { device } from '../../utils'
 import { SiYoutube } from 'react-icons/si'
 import { BsSpotify } from 'react-icons/bs'
-
-// ;<Img src={props.img} />
 
 const Temas = (props) => {
   const [ref, inView] = useInView({ triggerOnce: true })
   return (
-    <Container ref={ref} inView={inView} id='musica'>
+    <Container ref={ref} inView={inView}>
       <Wrapper>
         <InfoContainer>
           <Info>
@@ -39,7 +35,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: 0.5px solid white;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transform: ${({ inView }) =>
     inView ? 'translate(0px, 0px);' : 'translate(0px, 80px);'};
@@ -52,7 +47,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-
+  border-bottom: 0.5px solid white;
   width: 90%;
 `
 const ImgContainer = styled.div`

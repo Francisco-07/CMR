@@ -21,7 +21,6 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
@@ -33,8 +32,7 @@ const Title = styled.h2`
   border-top: 4px solid white;
   margin: 0;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transform: ${({ inView }) =>
-    inView ? 'translate(0px, 0px);' : 'translate(120px, 0);'};
+  transform: scale(1.2);
   transition: all 0.5s;
   transition-delay: ${(props) => props.delay}s;
 `

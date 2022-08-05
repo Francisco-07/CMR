@@ -32,14 +32,16 @@ function Main() {
       <div id='eventos'>
         <Title title='EVENTOS' />
       </div>
-      {eventos.map((info) => (
-        <Eventos
-          key={info.id}
-          date={info.date}
-          name={info.name}
-          location={info.location}
-        />
-      ))}
+      {eventos
+        .sort((a, b) => b.id - a.id)
+        .map((info) => (
+          <Eventos
+            key={info.id}
+            date={info.date}
+            name={info.name}
+            location={info.location}
+          />
+        ))}
       <div id='video'>
         <Title title='VIDEOS' />
       </div>

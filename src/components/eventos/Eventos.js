@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../utils'
 
 const Eventos = (props) => {
   return (
@@ -43,6 +44,9 @@ const Evento = styled.div`
 const Info = styled.div`
   display: flex;
   width: 100%;
+  @media ${device.tablet} {
+    width: 60%;
+  }
 `
 const Button = styled.button`
   background-color: #80ac9a;

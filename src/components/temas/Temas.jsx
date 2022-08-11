@@ -1,6 +1,6 @@
 import { useInView } from 'react-intersection-observer'
 import styled from 'styled-components'
-import { device } from '../../utils'
+import { device, colors } from '../../utils'
 import { SiYoutube } from 'react-icons/si'
 import { BsSpotify } from 'react-icons/bs'
 
@@ -90,8 +90,12 @@ const Icons = styled.div`
   gap: 1rem;
 `
 const Icon = styled.div`
+  a {
+    text-decoration: none;
+  }
   svg {
     font-size: 2rem;
+    color: ${colors.white};
     &:hover {
       color: ${(props) => props.col};
     }

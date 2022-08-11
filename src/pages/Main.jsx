@@ -46,6 +46,8 @@ function Main() {
           title={info.title}
           author={info.author}
           img={info.mainImage}
+          youtube={info.youtube}
+          spotify={info.spotify}
           alt={info.slug}
         />
       ))}

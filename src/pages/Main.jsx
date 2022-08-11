@@ -7,13 +7,19 @@ import Eventos from '../components/eventos/Eventos'
 import Title from '../components/title/Title'
 import YoutubeEmbed from '../components/youtube/YoutubeEmbed'
 import styled, { keyframes } from 'styled-components'
-import { getAllSongs, getAllArtistas, getAllEvents } from '../lib/api'
+import {
+  getAllSongs,
+  getAllArtistas,
+  getAllEvents,
+  getHeroImg,
+} from '../lib/api'
 import { useEffect, useState } from 'react'
 
 function Main() {
   const [songs, setSongs] = useState([])
   const [artistas, setArtistas] = useState([])
   const [events, setEvents] = useState([])
+  const [heroImg, setHeroImg] = useState([{ mainImage: 'none' }])
 
   useEffect(() => {
     getAllSongs()
@@ -32,11 +38,18 @@ function Main() {
       .then((data) => setEvents(data))
       .catch(console.error)
   }, [])
+
+  useEffect(() => {
+    getHeroImg()
+      .then((data) => setHeroImg(data))
+      .catch(console.error)
+  }, [])
+
   console.log(events)
   return (
     <Fade>
       <Navbar />
-      <Hero />
+      <Hero heroImg={heroImg[0]} />
       <div id='musica'>
         <Title title='MUSICA' />
       </div>

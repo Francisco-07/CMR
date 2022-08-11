@@ -10,9 +10,17 @@ const temas = `
   'mainImage': mainImage.asset->url,
   publishedAt,
 `
+
+const hero = `
+  'mainImage': mainImage.asset->url,
+  description,
+`
+
 const artistas = `
   name,
   puesto,
+  instagram,
+  spotify,
   'slug': slug.current,
   'mainImage': mainImage.asset->url,
 `
@@ -38,6 +46,11 @@ export async function getAllSongs() {
 
 export async function getAllArtistas() {
   const results = await client.fetch(`*[_type == "artistas"] {${artistas}}`)
+  return results
+}
+
+export async function getHeroImg() {
+  const results = await client.fetch(`*[_type == "hero"] {${hero}}`)
   return results
 }
 

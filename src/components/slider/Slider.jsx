@@ -2,7 +2,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { device } from '../../utils'
+import { device, colors } from '../../utils'
 import { BsSpotify } from 'react-icons/bs'
 import { SiInstagram } from 'react-icons/si'
 
@@ -32,10 +32,14 @@ const Slider = ({ artistas }) => {
                 <Desc>{item.puesto}</Desc>
                 <Icons>
                   <Icon col={'#E1306C'}>
-                    <SiInstagram />
+                    <a rel='noreferrer' target='_blank' href={item.instagram}>
+                      <SiInstagram />
+                    </a>
                   </Icon>
                   <Icon col={'#1DB954'}>
-                    <BsSpotify />
+                    <a rel='noreferrer' target='_blank' href={item.spotify}>
+                      <BsSpotify />
+                    </a>
                   </Icon>
                 </Icons>
               </div>
@@ -148,6 +152,7 @@ const Icons = styled.div`
 `
 const Icon = styled.div`
   svg {
+    color: ${colors.white};
     font-size: 1.5rem;
     cursor: pointer;
     &:hover {

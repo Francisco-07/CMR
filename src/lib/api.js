@@ -4,6 +4,8 @@ import imageUrlBuilder from '@sanity/image-url'
 const temas = `
   title,
   author,
+  spotify,
+  youtube,
   'slug': slug.current,
   'mainImage': mainImage.asset->url,
   publishedAt,

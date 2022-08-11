@@ -16,10 +16,14 @@ const Temas = (props) => {
           </Info>
           <Icons>
             <Icon col={'#1DB954'}>
-              <BsSpotify />
+              <a rel='noreferrer' target='_blank' href={props.spotify}>
+                <BsSpotify />
+              </a>
             </Icon>
             <Icon col={'#FF0000'}>
-              <SiYoutube />
+              <a rel='noreferrer' target='_blank' href={props.youtube}>
+                <SiYoutube />
+              </a>
             </Icon>
           </Icons>
         </InfoContainer>

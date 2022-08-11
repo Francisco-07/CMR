@@ -12,7 +12,11 @@ const Eventos = (props) => {
             <p>{props.location}</p>
           </Evento>
         </Info>
-        <Button>DISPONIBLE</Button>
+        <Btn>
+          <div>
+            <Button>DISPONIBLE</Button>
+          </div>
+        </Btn>
       </Wrapper>
     </Container>
   )
@@ -44,7 +48,7 @@ const Evento = styled.div`
 `
 const Info = styled.div`
   display: flex;
-  width: 100%;
+  flex: 0.65;
 
   @media ${device.tablet} {
     width: 60%;
@@ -53,9 +57,15 @@ const Info = styled.div`
     width: 40%;
   }
 `
+const Btn = styled.div`
+  flex: 0.3;
+  display: flex;
+  justify-content: flex-end;
+`
 const Button = styled.button`
   background-color: ${colors.green};
   color: ${colors.white};
+  padding: 14px 14px;
   border: none;
   font-weight: bold;
   &:hover {

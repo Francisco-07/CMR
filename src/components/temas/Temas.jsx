@@ -39,9 +39,8 @@ const Container = styled.div`
   transform: ${({ inView }) =>
     inView ? 'translate(0px, 0px);' : 'translate(0px, 80px);'};
   transition: all 1.2s;
-  height: 170px;
+
   @media ${device.tablet} {
-    height: 170px;
   }
 `
 
@@ -62,11 +61,12 @@ const ImgContainer = styled.div`
   }
 `
 const Img = styled.img`
-  height: 80%;
+  height: 160px;
   width: 320px;
   object-fit: cover;
 `
 const InfoContainer = styled.div`
+  min-height: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;

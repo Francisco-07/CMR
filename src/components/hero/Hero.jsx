@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
+import { ReactComponent as YourSvg } from '../../assets/logo.svg'
 
 const Hero = (props) => {
   const [ref, inView] = useInView({ triggerOnce: true })
-  console.log(props.heroImg)
+
   return (
     <Container ref={ref} heroImg={props.heroImg}>
       <Title inView={inView}>CMR</Title>
+      <YourSvg />
     </Container>
   )
 }
@@ -20,18 +22,17 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-  margin-bottom: 20px;
+  position: relative;
 `
 const Title = styled.h2`
   font-size: 5.5rem;
   border-bottom: 4px solid white;
-  border-top: 4px solid white;
   margin: 0;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transform: scale(1.2);
   transition: all 1.5s;
 `
 

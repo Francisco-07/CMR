@@ -27,8 +27,8 @@ const artistas = `
 const events = `
   title,
   ciudad,
-  'slug': slug.current,
   publishedAt,
+  disponible,
 `
 
 const builder = imageUrlBuilder(client)

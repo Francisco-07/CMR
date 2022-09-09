@@ -14,7 +14,11 @@ const Eventos = (props) => {
         </Info>
         <Btn>
           <div>
-            <Button>DISPONIBLE</Button>
+            {props.disponible ? (
+              <Button>DISPONIBLE</Button>
+            ) : (
+              <ButtonDisabled>DISPONIBLE</ButtonDisabled>
+            )}
           </div>
         </Btn>
       </Wrapper>
@@ -72,6 +76,15 @@ const Button = styled.button`
     color: ${colors.black};
     background-color: ${colors.white};
   }
+`
+const ButtonDisabled = styled.button`
+  background-color: grey;
+  opacity: 0.6;
+  color: ${colors.white};
+  padding: 14px 14px;
+  border: none;
+  font-weight: bold;
+  cursor: not-allowed;
 `
 
 export default Eventos

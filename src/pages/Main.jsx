@@ -77,6 +77,7 @@ function Main() {
           date={info.publishedAt}
           name={info.title}
           location={info.ciudad}
+          disponible={info.disponible}
         />
       ))}
       <div id='video'>

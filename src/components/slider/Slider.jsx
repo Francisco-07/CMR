@@ -1,5 +1,5 @@
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 import { device, colors } from '../../utils'
@@ -17,6 +17,16 @@ const Slider = ({ artistas }) => {
       setSlideIndex(slideIndex < artistas.length - 1 ? slideIndex + 1 : 0)
     }
   }
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (slideIndex >= artistas.length - 1) {
+        setSlideIndex(0)
+      } else {
+        setSlideIndex(slideIndex + 1)
+      }
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [slideIndex, artistas.length])
 
   return (
     <Container ref={ref} inView={inView}>
@@ -69,26 +79,27 @@ const Container = styled.div`
 `
 
 const Arrow = styled.div`
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  opacity: 0.4;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: ${(props) => props.direction === 'left' && '10px'};
-  right: ${(props) => props.direction === 'right' && '10px'};
-  margin: auto;
-  cursor: pointer;
-  z-index: 2;
-  svg {
-    color: black;
-  }
+  display: none;
   @media ${device.tablet} {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    opacity: 0.4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: ${(props) => props.direction === 'left' && '10px'};
+    right: ${(props) => props.direction === 'right' && '10px'};
+    margin: auto;
+    cursor: pointer;
+    z-index: 2;
+    svg {
+      color: black;
+    }
     &:hover {
       opacity: 1;
     }

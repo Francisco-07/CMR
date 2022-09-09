@@ -105,6 +105,7 @@ const Menu = styled.div`
     }
   }
   @media ${device.laptop} {
+    transition: none;
     display: flex;
     justify-content: flex-end;
     flex-direction: row;

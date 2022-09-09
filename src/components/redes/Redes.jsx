@@ -1,20 +1,21 @@
 import styled from 'styled-components'
 import { colors } from '../../utils'
-import { SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si'
+import { SiInstagram, SiYoutube } from 'react-icons/si'
+import { BsSpotify } from 'react-icons/bs'
 
 function Redes() {
   return (
     <>
       <Container>
         <RedesList>
-          <Li col={'#4267B2'}>
-            <SiFacebook />
-          </Li>
-          <Li col={'#FF0000'}>
-            <SiYoutube />
+          <Li col={'#1DB954'}>
+            <BsSpotify />
           </Li>
           <Li col={'#E1306C'}>
             <SiInstagram />
+          </Li>
+          <Li col={'#FF0000'}>
+            <SiYoutube />
           </Li>
         </RedesList>
       </Container>

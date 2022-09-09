@@ -16,7 +16,7 @@ const Hero = (props) => {
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(24, 23, 23, 0.6), rgba(24, 23, 23, 0.6)),
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(${(props) => props.heroImg.mainImage});
   background-size: cover;
   background-repeat: no-repeat;

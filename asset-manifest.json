@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/CMR/static/css/main.2035f26e.css",
+    "main.js": "/CMR/static/js/main.6f960077.js",
+    "static/media/logo.svg": "/CMR/static/media/logo.a9ac183788712f578273f3d6ea46ebe2.svg",
+    "index.html": "/CMR/index.html",
+    "main.2035f26e.css.map": "/CMR/static/css/main.2035f26e.css.map",
+    "main.6f960077.js.map": "/CMR/static/js/main.6f960077.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2035f26e.css",
+    "static/js/main.6f960077.js"
+  ]
+}

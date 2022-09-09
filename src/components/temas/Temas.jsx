@@ -28,7 +28,7 @@ const Temas = (props) => {
           </Icons>
         </InfoContainer>
         <ImgContainer>
-          <Img src={props.img} alt={props.alt} />
+          <Img img={props.img} />
         </ImgContainer>
       </Wrapper>
     </Container>
@@ -56,6 +56,7 @@ const Wrapper = styled.div`
 `
 const ImgContainer = styled.div`
   display: none;
+
   @media ${device.tablet} {
     display: flex;
     justify-content: flex-end;
@@ -64,28 +65,39 @@ const ImgContainer = styled.div`
     margin-left: 2rem;
   }
 `
-const Img = styled.img`
+const Img = styled.div`
+  border-radius: 5px;
   height: 160px;
   width: 320px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(${(props) => props.img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   object-fit: cover;
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url(${(props) => props.img});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 5px;
+  }
 `
 const InfoContainer = styled.div`
   min-height: 200px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
+  padding: 20px 0;
+  flex-direction: column;
   @media ${device.tablet} {
     width: 60%;
   }
 `
-const Info = styled.div`
-  flex: 2;
-`
+const Info = styled.div``
 const Icons = styled.div`
-  flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
 `
@@ -96,6 +108,7 @@ const Icon = styled.div`
   svg {
     font-size: 2rem;
     color: ${colors.white};
+    cursor: pointer;
     &:hover {
       color: ${(props) => props.col};
     }

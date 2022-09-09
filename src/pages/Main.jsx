@@ -99,7 +99,7 @@ const fadeIn = keyframes`
 `
 
 const Fade = styled.div`
-  animation: 1s ${fadeIn} ease-out;
+  animation: 2s ${fadeIn} ease-out;
 `
 
 export default Main

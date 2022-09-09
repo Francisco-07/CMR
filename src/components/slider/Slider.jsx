@@ -132,6 +132,7 @@ const Image = styled.img`
   height: 70%;
   width: 100%;
   object-fit: cover;
+  border-radius: 5px;
   @media ${device.tablet} {
     width: 70%;
   }

@@ -53,6 +53,7 @@ const Li = styled.li`
 
   svg {
     font-size: 2rem;
+    cursor: pointer;
     &:hover {
       color: ${(props) => props.col};
     }

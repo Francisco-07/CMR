@@ -86,7 +86,7 @@ const Img = styled.div`
   }
 `
 const InfoContainer = styled.div`
-  min-height: 200px;
+  min-height: 150px;
   display: flex;
   width: 100%;
   padding: 20px 0;

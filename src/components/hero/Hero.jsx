@@ -6,8 +6,8 @@ const Hero = (props) => {
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
-    <Container ref={ref} heroImg={props.heroImg}>
-      <Title inView={inView}>CMR</Title>
+    <Container ref={ref} inView={inView} heroImg={props.heroImg}>
+      <Title>CMR</Title>
       <YourSvg />
     </Container>
   )
@@ -27,13 +27,19 @@ const Container = styled.div`
   align-items: center;
   overflow-x: hidden;
   position: relative;
+  h2,
+  svg {
+    opacity: ${({ inView }) => (inView ? '1' : '0')};
+    transform: ${({ inView }) =>
+      inView ? 'translate(0px, 0px);' : 'translate(-30px, 0px);'};
+    transition: all 1s;
+    filter: ${({ inView }) => (inView ? 'blur(0px)' : 'blur(4px)')};
+  }
 `
 const Title = styled.h2`
   font-size: 5.5rem;
   border-bottom: 4px solid white;
   margin: 0;
-  opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transition: all 1.5s;
 `
 
 export default Hero

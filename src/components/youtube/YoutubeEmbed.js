@@ -9,7 +9,7 @@ const YoutubeEmbed = ({ embedId }) => {
         <iframe
           width='853'
           height='480'
-          src={`https://www.youtube.com/embed/${embedId}`}
+          src={`https://www.youtube.com/embed/${embedId}?rel=0`}
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
           allowFullScreen
@@ -38,9 +38,10 @@ const VideoFrame = styled.div`
   iframe {
     left: 0;
     top: 0;
-    height: 100%;
+    height: 80%;
     width: 100%;
     position: absolute;
+    color: transparent;
   }
 `
 

@@ -50,6 +50,11 @@ function Main() {
     <Fade>
       <Navbar />
       <Hero heroImg={heroImg[0]} />
+
+      <div id='video'>
+        <Title title='ULTIMO ESTRENO' />
+      </div>
+      <YoutubeEmbed embedId='S1kf_XhrUos' />
       <div id='musica'>
         <Title title='MUSICA' />
       </div>
@@ -65,7 +70,7 @@ function Main() {
         />
       ))}
       <div id='artistas'>
-        <Title title='ARTISTAS' />
+        <Title title='CREW' />
       </div>
       <Slider artistas={artistas} />
       <div id='eventos'>
@@ -80,10 +85,7 @@ function Main() {
           disponible={info.disponible}
         />
       ))}
-      <div id='video'>
-        <Title title='VIDEOS' />
-      </div>
-      <YoutubeEmbed embedId='S1kf_XhrUos' />
+
       <Footer />
     </Fade>
   )

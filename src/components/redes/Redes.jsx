@@ -9,13 +9,31 @@ function Redes() {
       <Container>
         <RedesList>
           <Li col={'#1DB954'}>
-            <BsSpotify />
+            <a
+              rel='noreferrer'
+              target='_blank'
+              href='https://open.spotify.com/artist/6bFZZD669MuptfIDw47wIA'
+            >
+              <BsSpotify />
+            </a>
           </Li>
           <Li col={'#E1306C'}>
-            <SiInstagram />
+            <a
+              rel='noreferrer'
+              target='_blank'
+              href='https://www.instagram.com/lacmrcrew/'
+            >
+              <SiInstagram />
+            </a>
           </Li>
           <Li col={'#FF0000'}>
-            <SiYoutube />
+            <a
+              rel='noreferrer'
+              target='_blank'
+              href='https://www.youtube.com/c/CMRCrew0800'
+            >
+              <SiYoutube />
+            </a>
           </Li>
         </RedesList>
       </Container>
@@ -54,6 +72,7 @@ const Li = styled.li`
 
   svg {
     font-size: 2rem;
+    color: white;
     cursor: pointer;
     &:hover {
       color: ${(props) => props.col};

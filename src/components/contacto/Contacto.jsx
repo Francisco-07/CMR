@@ -31,7 +31,6 @@ const Container = styled.div`
 
 const Text = styled.h3`
   width: 90%;
-  font-size: 1rem;
   text-align: center;
   font-size: 1.5rem;
   margin-top: 1.2rem;
